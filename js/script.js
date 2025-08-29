@@ -1,6 +1,7 @@
 class PhotoGallery {
     constructor() {
         this.photos = this.loadPhotos();
+        this.shufflePhotos(); // Panggil fungsi acak di sini
         this.init();
     }
 
@@ -246,6 +247,21 @@ class PhotoGallery {
             "size": 245760
         }
         ];
+    }
+    
+    // Fungsi untuk mengacak array foto
+    shufflePhotos() {
+        let currentIndex = this.photos.length, randomIndex;
+        
+        // While there remain elements to shuffle.
+        while (currentIndex !== 0) {
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            
+            // And swap it with the current element.
+            [this.photos[currentIndex], this.photos[randomIndex]] = [this.photos[randomIndex], this.photos[currentIndex]];
+        }
     }
 }
 
