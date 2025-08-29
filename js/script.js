@@ -214,8 +214,8 @@ class MediaGallery {
         
         // Update button text to show counts
         document.getElementById('showAll').textContent = `Semua Media (${this.allMedia.length})`;
-        document.getElementById('showPhotos').textContent = `Foto Saja (${photoCount})`;
-        document.getElementById('showVideos').textContent = `Video Saja (${videoCount})`;
+        document.getElementById('showPhotos').textContent = `Foto (${photoCount})`;
+        document.getElementById('showVideos').textContent = `Video (${videoCount})`;
     }
 
     formatFileSize(bytes) {
@@ -236,141 +236,258 @@ class MediaGallery {
 
     loadMedia() {
         return [
-            // Foto yang sudah ada
             {
-                "id": 1,
-                "src": "img/evoks.jpeg",
-                "name": "website E-Voting",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 2,
-                "src": "img/ujicoba.jpeg",
-                "name": "Uji coba traffic website E-Voting",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 3,
-                "src": "img/presentasi.jpeg",
-                "name": "Presentasi Hasil website E-Voting",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 4,
-                "src": "img/17an.jpeg",
-                "name": "Kegiatan 17 Agustusan",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 5,
-                "src": "img/17ann.jpeg",
-                "name": "Kegiatan 17 Agustusan (2)",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 6,
-                "src": "img/17.jpeg",
-                "name": "Kegiatan 17 Agustusan (3)",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 7,
-                "src": "img/apel.jpeg",
-                "name": "Apel Pagi",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 8,
-                "src": "img/bukutamu.jpeg",
-                "name": "Pengecekan Buku Tamu",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 9,
-                "src": "img/cap.jpeg",
-                "name": "Kegiatan Pengecapan",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 10,
-                "src": "img/flyer.jpeg",
-                "name": "Pemasangan Flyer di RPP",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 11,
-                "src": "img/kevin.jpeg",
-                "name": "Kevin main gitar",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 12,
-                "src": "img/menang.jpeg",
-                "name": "Foto Kemenangan",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 13,
-                "src": "img/monitoring.jpeg",
-                "name": "Kegiatan Monitoring",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 14,
-                "src": "img/nando.jpeg",
-                "name": "Foto Nando menang",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 15,
-                "src": "img/pkstmik.jpeg",
-                "name": "Kegiatan PKS STMIK",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 16,
-                "src": "img/pksuin.jpeg",
-                "name": "Kegiatan PKS UIN",
-                "size": 245760,
-                "type": "photo"
-            },
-            {
-                "id": 17,
-                "src": "img/senam.jpeg",
-                "name": "Kegiatan Senam Pagi",
-                "size": 245760,
-                "type": "photo"
-            },
-            
-            {
-                "id": 18,
-                "src": "vid/angkut.mp4",
-                "name": "angkut pallete",
-                "size": 5242880,
-                "type": "video"
-            },
-            {
-                "id": 19,
-                "src": "vid/angkut2.mp4",
-                "name": "angkut pallete",
-                "size": 5242880,
-                "type": "video"
-            },
+            "id": 1,
+            "src": "img/evoks.jpeg",
+            "name": "website E-Voting",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 2,
+            "src": "img/ujicoba.jpeg",
+            "name": "Uji coba traffic website E-Voting",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 3,
+            "src": "img/presentasi.jpeg",
+            "name": "Presentasi Hasil website E-Voting",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 4,
+            "src": "img/17an.jpeg",
+            "name": "Kegiatan 17 Agustusan",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 5,
+            "src": "img/17ann.jpeg",
+            "name": "Kegiatan 17 Agustusan (2)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 6,
+            "src": "img/17.jpeg",
+            "name": "Kegiatan 17 Agustusan (3)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 7,
+            "src": "img/apel.jpeg",
+            "name": "Apel Pagi",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 8,
+            "src": "img/bukutamu.jpeg",
+            "name": "Pengecekan Buku Tamu",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 9,
+            "src": "img/cap.jpeg",
+            "name": "Kegiatan Pengecapan",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 10,
+            "src": "img/flyer.jpeg",
+            "name": "Pemasangan Flyer di RPP",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 11,
+            "src": "img/kevin.jpeg",
+            "name": "Kevin main gitar",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 12,
+            "src": "img/menang.jpeg",
+            "name": "Foto Kemenangan",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 13,
+            "src": "img/monitoring.jpeg",
+            "name": "Kegiatan Monitoring",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 14,
+            "src": "img/nando.jpeg",
+            "name": "Foto Nando menang",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 15,
+            "src": "img/pkstmik.jpeg",
+            "name": "Kegiatan PKS STMIK",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 16,
+            "src": "img/pksuin.jpeg",
+            "name": "Kegiatan PKS UIN",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 17,
+            "src": "img/senam.jpeg",
+            "name": "Kegiatan Senam Pagi",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 18,
+            "src": "vid/angkut.mp4",
+            "name": "angkut pallete",
+            "size": 5242880,
+            "type": "video"
+        },
+        {
+            "id": 19,
+            "src": "vid/angkut2.mp4",
+            "name": "angkut pallete",
+            "size": 5242880,
+            "type": "video"
+        },
+        {
+            "id": 20,
+            "src": "img/aldo.jpeg",
+            "name": "Foto Aldo",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 21,
+            "src": "img/aldo2.jpeg",
+            "name": "Foto Aldo (2)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 22,
+            "src": "img/fernando2.jpeg",
+            "name": "Foto Fernando (2)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 23,
+            "src": "img/ibnu2.jpeg",
+            "name": "Foto Ibnu (2)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 24,
+            "src": "img/ibnu3.jpeg",
+            "name": "Foto Ibnu (3)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 25,
+            "src": "img/kevindwi.jpeg",
+            "name": "Foto Kevin Dwi",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 26,
+            "src": "img/kevindwi2.jpeg",
+            "name": "Foto Kevin Dwi (2)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 27,
+            "src": "img/kevinocta.jpeg",
+            "name": "Foto Kevin Octa",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 28,
+            "src": "img/kevinocta2.jpeg",
+            "name": "Foto Kevin Octa (2)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 29,
+            "src": "img/lengkap.jpeg",
+            "name": "Foto Lengkap",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 30,
+            "src": "img/nando2.jpeg",
+            "name": "Foto Nando (2)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 31,
+            "src": "img/penjemputan.jpeg",
+            "name": "Kegiatan Penjemputan",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 32,
+            "src": "img/penjemputan2.jpeg",
+            "name": "Kegiatan Penjemputan (2)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 33,
+            "src": "img/penjemputan3.jpeg",
+            "name": "Kegiatan Penjemputan (3)",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 34,
+            "src": "img/perwakilanpenjemputan.jpeg",
+            "name": "Perwakilan Penjemputan",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 35,
+            "src": "img/samahendri.jpeg",
+            "name": "Foto dengan Hendri",
+            "size": 245760,
+            "type": "photo"
+        },
+        {
+            "id": 36,
+            "src": "img/samayusuf.jpeg",
+            "name": "Foto dengan Yusuf",
+            "size": 245760,
+            "type": "photo"
+        }
         ];
     }
     
