@@ -168,7 +168,7 @@ class MediaGallery {
 
     deleteMedia(mediaId) {
         this.allMedia = this.allMedia.filter(media => media.id !== mediaId);
-        this.filterMedia(this.currentFilter); // Re-apply current filter
+        this.filterMedia(this.currentFilter);
         this.updateStats();
     }
 
@@ -178,13 +178,13 @@ class MediaGallery {
         
         if (media.type === 'video') {
             content.innerHTML = `
-                <video controls autoplay style="max-width: 90%; max-height: 90%;">
+                <video controls autoplay>
                     <source src="${media.src}" type="video/mp4">
                     Browser Anda tidak mendukung video HTML5.
                 </video>
             `;
         } else {
-            content.innerHTML = `<img src="${media.src}" alt="${media.name}" style="max-width: 90%; max-height: 90%; object-fit: contain;">`;
+            content.innerHTML = `<img src="${media.src}" alt="${media.name}">`;
         }
         
         lightbox.style.display = 'flex';
@@ -210,7 +210,6 @@ class MediaGallery {
         const photoCount = this.allMedia.filter(m => m.type === 'photo').length;
         const videoCount = this.allMedia.filter(m => m.type === 'video').length;
         
-        // Update button text to show counts
         document.getElementById('showAll').textContent = `Semua Media (${this.allMedia.length})`;
         document.getElementById('showPhotos').textContent = `Foto (${photoCount})`;
         document.getElementById('showVideos').textContent = `Video (${videoCount})`;
@@ -457,7 +456,6 @@ class MediaGallery {
             [this.allMedia[currentIndex], this.allMedia[randomIndex]] = [this.allMedia[randomIndex], this.allMedia[currentIndex]];
         }
         
-        // Update filtered media as well
         this.filteredMedia = [...this.allMedia];
     }
 }

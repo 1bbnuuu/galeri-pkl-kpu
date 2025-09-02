@@ -72,12 +72,45 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            padding: 20px;
+        }
+        
+        .lightbox-container {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .lightbox img, .lightbox video {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: -20px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
         
         .loading-skeleton {
@@ -181,13 +214,10 @@
     </main>
 
     <div id="lightbox" class="lightbox">
-        <div id="lightboxContent"></div>
-        <button 
-            id="closeLightbox" 
-            class="absolute top-4 right-4 text-white text-3xl font-bold hover:text-gray-300 transition-colors z-10"
-        >
-            ×
-        </button>
+        <div class="lightbox-container">
+            <div id="lightboxContent"></div>
+            <div class="lightbox-close" id="closeLightbox">×</div>
+        </div>
     </div>
 
 <script src="js/script.js"></script>
